@@ -1,15 +1,12 @@
-//
-//  ViewController.h
-//  QuickstartApp
-//
-//  Created by Casey gruppioni on 10/9/17.
-//  Copyright © 2017 Casey gruppioni. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
+#import <Google/SignIn.h>
+#import <GTLRSheets.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <GIDSignInDelegate, GIDSignInUIDelegate>
+
+@property (nonatomic, strong) IBOutlet GIDSignInButton *signInButton;
+@property (nonatomic, strong) UITextView *output;
+@property (nonatomic, strong) GTLRSheetsService *service;
 
 
 @end
-
