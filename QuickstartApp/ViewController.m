@@ -47,7 +47,7 @@ didSignInForUser:(GIDGoogleUser *)user
 - (void)listMajors {
     self.output.text = @"Getting sheet data...";
     NSString *spreadsheetId = @"1i4EY5HFnLEAf_3tbRY3ZVte12MfQm_KlMe711NV2jSU";
-    NSString *remaining = @"Month Overview!I3:IK";
+    NSString *remaining = @"Totals For App!A2:C2";
     
     GTLRSheetsQuery_SpreadsheetsValuesGet *query =
     [GTLRSheetsQuery_SpreadsheetsValuesGet queryWithSpreadsheetId:spreadsheetId
