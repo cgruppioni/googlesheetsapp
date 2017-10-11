@@ -47,7 +47,7 @@ didSignInForUser:(GIDGoogleUser *)user
 - (void)listMajors {
     self.output.text = @"Getting sheet data...";
     NSString *spreadsheetId = @"1i4EY5HFnLEAf_3tbRY3ZVte12MfQm_KlMe711NV2jSU";
-    NSString *remaining = @"Totals For App!A2:C2";
+    NSString *remaining = @"Totals For App!A2:D2";
     
     GTLRSheetsQuery_SpreadsheetsValuesGet *query =
     [GTLRSheetsQuery_SpreadsheetsValuesGet queryWithSpreadsheetId:spreadsheetId
@@ -72,8 +72,11 @@ didSignInForUser:(GIDGoogleUser *)user
             [output appendString:@"Savings \n"];
             [output appendString: row[1]];
             [output appendString:@"\n\n"];
-            [output appendString:@"Credit Card Debt \n"];
+            [output appendString:@"Change in Savings \n"];
             [output appendString: row[2]];
+            [output appendString:@"\n\n"];
+            [output appendString:@"Credit Card Debt \n"];
+            [output appendString: row[3]];
             
         } else {
             [output appendString:@"No data found."];
