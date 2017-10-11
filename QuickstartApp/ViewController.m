@@ -66,8 +66,15 @@ didSignInForUser:(GIDGoogleUser *)user
         NSArray *rows = result.values;
         if (rows.count > 0) {
             NSArray *row = [rows objectAtIndex:0];
-            [output appendString:@"Checking, Savings, Credit Card Debt:\n"];
-            [output appendFormat:@"%@, %@, %@\n", row[0], row[1], row[2]];
+            [output appendString:@"Checking \n"];
+            [output appendString: row[0]];
+            [output appendString:@"\n\n"];
+            [output appendString:@"Savings \n"];
+            [output appendString: row[1]];
+            [output appendString:@"\n\n"];
+            [output appendString:@"Credit Card Debt \n"];
+            [output appendString: row[2]];
+            
         } else {
             [output appendString:@"No data found."];
         }
