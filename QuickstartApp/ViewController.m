@@ -47,12 +47,11 @@ didSignInForUser:(GIDGoogleUser *)user
 - (void)listMajors {
     self.output.text = @"Getting sheet data...";
     NSString *spreadsheetId = @"1i4EY5HFnLEAf_3tbRY3ZVte12MfQm_KlMe711NV2jSU";
-//    NSString *range = @"Class Data!A2:E";
     NSString *remaining = @"Month Overview!I3:IK";
     
     GTLRSheetsQuery_SpreadsheetsValuesGet *query =
     [GTLRSheetsQuery_SpreadsheetsValuesGet queryWithSpreadsheetId:spreadsheetId
-                                                            range:range];
+                                                            range:remaining];
     [self.service executeQuery:query
                       delegate:self
              didFinishSelector:@selector(displayResultWithTicket:finishedWithObject:error:)];
@@ -68,8 +67,7 @@ didSignInForUser:(GIDGoogleUser *)user
         if (rows.count > 0) {
             [output appendString:@"Checking, Savings, Credit Card Debt:\n"];
             for (NSArray *row in rows) {
-                // Print columns A and E, which correspond to indices 0 and 4.
-                [output appendFormat:@"%@, %@\n", row[0], row[3]];
+                [output appendFormat:@"%@, %@\n", row[0], row[2]];
             }
         } else {
             [output appendString:@"No data found."];
