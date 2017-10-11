@@ -46,8 +46,9 @@ didSignInForUser:(GIDGoogleUser *)user
 // https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
 - (void)listMajors {
     self.output.text = @"Getting sheet data...";
-    NSString *spreadsheetId = @"1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms";
-    NSString *range = @"Class Data!A2:E";
+    NSString *spreadsheetId = @"1i4EY5HFnLEAf_3tbRY3ZVte12MfQm_KlMe711NV2jSU";
+//    NSString *range = @"Class Data!A2:E";
+    NSString *remaining = @"Month Overview!I3:IK";
     
     GTLRSheetsQuery_SpreadsheetsValuesGet *query =
     [GTLRSheetsQuery_SpreadsheetsValuesGet queryWithSpreadsheetId:spreadsheetId
@@ -65,10 +66,10 @@ didSignInForUser:(GIDGoogleUser *)user
         NSMutableString *output = [[NSMutableString alloc] init];
         NSArray *rows = result.values;
         if (rows.count > 0) {
-            [output appendString:@"Name, Major:\n"];
+            [output appendString:@"Checking, Savings, Credit Card Debt:\n"];
             for (NSArray *row in rows) {
                 // Print columns A and E, which correspond to indices 0 and 4.
-                [output appendFormat:@"%@, %@\n", row[0], row[4]];
+                [output appendFormat:@"%@, %@\n", row[0], row[3]];
             }
         } else {
             [output appendString:@"No data found."];
