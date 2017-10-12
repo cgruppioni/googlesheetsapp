@@ -26,6 +26,7 @@
     // Initialize the service object.
     self.service = [[GTLRSheetsService alloc] init];
     self.output.font = [UIFont fontWithName:@"Arial" size:30];
+    self.output.textAlignment = NSTextAlignmentCenter;
 }
 
 - (void)signIn:(GIDSignIn *)signIn
