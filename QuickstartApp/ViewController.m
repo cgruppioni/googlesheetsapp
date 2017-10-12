@@ -25,6 +25,7 @@
     
     // Initialize the service object.
     self.service = [[GTLRSheetsService alloc] init];
+    self.output.font = [UIFont fontWithName:@"Arial" size:30];
 }
 
 - (void)signIn:(GIDSignIn *)signIn
